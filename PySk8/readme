@@ -1,0 +1,12 @@
+Welcome!
+
+That's one of my first projects, to create this project I used technologies like Python, Django, PostgreSQL, JavaScript, jQuery.
+
+It's a simple trick rolling app for skateboarders where you can choose difficulty of a trick and a stance, in addition its combined with mini-forum where you can share opinions about certain products. Staff users has ability to give warnings at forum, 5 warnings equals delete.
+I'v made that app for my own use and just to gain experience working on that kind of app.
+
+---------------
+
+To make this app work you need to fill static/js/app.js with YouTube API key, which you can get from google developer tools. Since every key is attached to google account i had to remove mine from code.
+
+Thanks and enjoy.

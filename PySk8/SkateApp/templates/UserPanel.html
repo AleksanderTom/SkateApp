@@ -1,0 +1,81 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PySk8 Home</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/css.css' %}">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #333612;">
+    <a class="navbar-brand" href="../">
+        <img src="../../static/Imgs/logo.png" width="200" height="70" class="d-inline-block align-middle"
+             alt="">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav" style="font-size: 30px">
+            <a class="nav-item nav-link active" href="../">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="../solo_skate">SoloSkate</a>
+            {% if user.is_authenticated %}
+                <a class="nav-item nav-link" href="../mini_forum">Share your experience!</a>
+            {% endif %}
+        </div>
+        <form class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+            <a href="../user_acc" class="btn btn-outline-success my-2 my-sm-0">Welcome {{ username }}</a>
+        </form>
+    </div>
+</nav>
+<div class="container eachPost">
+    <main id="register">
+        <form method="post" enctype="multipart/form-data">{% csrf_token %}
+            <a href="../logout" class="btn btn-outline-success my-2 my-sm-0" id="logout">Logout</a>
+            <div>
+                <h1>Edit profile:</h1>
+                <div id="editForm">
+                    {% if user.UserProfile.avatar %}
+                        <img src="{{ user.UserProfile.avatar.url }}" width="300" height="200">
+                    {% endif %}
+                    {{ form }}
+                    <label>
+                        <input type="submit" value="Edit" class="btn btn-outline-success my-2 my-sm-0">
+                    </label>
+                    <br>{{ msg }}
+                </div>
+            </div>
+        </form>
+        <br>
+        <h1>Edit posts:</h1>
+        <div>
+            {% for image in images %}
+                <div class="eachPost">
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <br>
+                        <h6>Title:</h6>{{ image.title }}
+                        <a href="../edit_post/{{ image.id }}" class="btn btn-outline-success my-2 my-sm-0">Edit</a>
+                        <br>
+                        <br>
+                        <img src="{{ image.image.url }}" alt="" width="150" height="100">
+                        <h4>Description:</h4>
+                        <h6>{{ image.description }}</h6>
+                        <br>
+                        <br>
+                    </form>
+                </div>
+            {% endfor %}
+        </div>
+    </main>
+</div>
+
+<script src="{% static 'js/app.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,233 @@
+/*@mixin font-base {*/
+	/*padding: 0;*/
+	/*margin: 0;*/
+	/*line-height: 1.3;*/
+	/*font-weight: 600;*/
+/*}*/
+
+h4 {
+	@include font-base;
+}
+
+p {
+	@include font-base;
+	color: grey;
+	font-size: 0.7rem;
+}
+
+body {
+	background-color: #eee;
+}
+
+.container {
+	text-align: center;
+	width: 570px;
+	background-color: #fff;
+}
+
+
+section {
+	position: fixed;
+	text-align: center;
+	width: 560px;
+	background-color: #fff;
+}
+
+
+
+.logo {
+	width: 200px;
+	top: 560px;
+
+}
+
+main {
+	padding: 280px 18px 10px;
+}
+
+article {
+	display: flex;
+	align-items: center;
+	padding: 8px 12px;
+	border: 2px solid white;
+	border-radius: 1px;
+	margin: 0 auto;
+	/*&:hover {*/
+		/*border: 2px solid #ff9999;*/
+	/*}*/
+}
+article:hover {
+		border: 2px solid black;
+		background-color: #bcc757;
+	}
+
+.thumb {
+	height: 70px;
+	border-radius: 8px;
+}
+
+.details {
+	padding: 8px 22px;
+}
+
+.nav-item {
+	text-shadow: 1px 1px #bcc757;
+}
+
+.navbar {
+	position: fixed;
+	width: 100%;
+}
+
+.ytp {
+	text-align: center;
+}
+
+#register {
+	padding-top: 100px;
+}
+
+.userPG {
+	padding-top: 100px;
+}
+
+#myDiv {
+	position: absolute;
+	margin-right: 25px;
+	margin-left: 25px;
+	top: 285px;
+	align-items: center;
+	padding: 8px 12px;
+	border: 2px solid white;
+	border-radius: 1px;
+}
+
+
+.btn-outline-success {
+    color: #bcc757;
+    background-color: transparent;
+    background-image: none;
+    border-color: #bcc757;
+}
+
+
+/* --------------------  FORM INPUTS*/
+
+/* REGISTER */
+
+.helptext {
+	display: none;
+
+}
+
+.broregister p{
+	margin-right: auto;
+	font-size: large;
+	text-align: center;
+
+}
+
+
+#id_username {
+	margin-right: 60px;
+	font-size: large;
+	border-color: #bcc757;
+}
+
+#id_email {
+	font-size: large;
+	margin-right: 60px;
+	border-color: #bcc757;
+
+}
+
+#id_password {
+	font-size: large;
+	margin-right: 60px;
+	border-color: #bcc757;
+}
+
+#id_re_password {
+	font-size: large;
+	margin-right: 60px;
+	border-color: #bcc757;
+}
+
+/* LOGIN */
+
+#id_login {
+	font-size: large;
+	margin-right: 60px;
+	border-color: #bcc757;
+}
+
+#logout {
+	color: red;
+    background-color: transparent;
+    background-image: none;
+    border-color: red;
+}
+#logout:hover{
+	background-color: black;
+}
+
+/* ------------------- EDIT PROFILE --------------------*/
+
+#editForm {
+	border: 2px solid #bcc757;
+}
+
+#editForm img {
+	border: 2px solid black;
+}
+
+#id_avatar {
+	font-size: large;
+}
+
+.eachPost {
+	margin-bottom: 5px;
+	border: 2px solid black;
+}
+
+#id_title {
+	font-size: large;
+	border-color: #bcc757;
+}
+
+#id_image {
+	font-size: large;
+}
+
+#id_rating {
+	font-size: large;
+}
+
+#id_description {
+	font-size: large;
+	border-color: #bcc757;
+}
+
+.eachPost p {
+	font-size: large;
+}
+
+
+.hoverTrick {
+  color: red;
+}
+.hoverTrick:hover {
+  color: green;
+  transition: all 500ms ease-in-out;
+}
+.hoverTrick:hover .title span {
+  display: none;
+}
+.hoverTrick:hover .title:after {
+  content: ", Dont know this trick? Check 'progress' button";
+}
+
+.postHover:hover {
+		border: 2px solid black;
+		background-color: #bcc757;
+}
